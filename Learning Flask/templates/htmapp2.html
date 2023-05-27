@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Tish</title>
+    <style>
+        p {
+            color: white;
+            font-size: 35px;
+            border: 1px rgb(255, 73, 103);
+            font-family: 'Monotype Corsiva';
+        }
+        
+        .sub {
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body bgcolor="pink">
+    <p>Hey! Can You Vote?
+        <br>Let's find out!</p>
+
+    <form action="/submit" method="post">
+        <label name="n">Name</label>
+        <input type="text" name="n"> <br>
+        <label name="a">Age</label>
+        <input type="number" name="a" min="0" max="100">
+        <input type="submit" name="s" class="sub"> </form>
+
+    {% if 190>98 %} Thanks! {% endif %}
+</body>
+
+</html>

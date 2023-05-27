@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+<style>
+    .bsubmit {
+        color: #fff;
+        background-color: rgb(248, 167, 181);
+        /*yardley pink #f576b1*/
+        border-color: rgb(248, 167, 181)
+    }
+    
+    .bsubmit:hover {
+        color: #fff;
+        opacity: 7;
+    }
+    
+    .bsubmit.focus,
+    .bsubmit:focus {
+        color: #fff;
+        background-color: #ff0077dd;
+        border-color: #ff0077dd;
+        box-shadow: 0 0 0 .2rem rgba(255, 38, 190, 0.5)
+    }
+</style>
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{ note.data }}
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn bsubmit">Add Note</button>
+    </div>
+</form>
+{% endblock %}

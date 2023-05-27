@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>Welcome to Ecosist</title>
+    <style>
+        footer {
+            position: fixed;
+            width: 100%;
+            height: 80px;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(20, 92, 37);
+            /*rgb(18, 47, 145)*/
+            color: white;
+            text-align: center;
+        }
+        
+        p1 {
+            color: rgb(27, 63, 29)
+        }
+        
+        .navdiv {
+            /*z-index: 1;*/
+            position: fixed;
+            top: 0;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background-color: black;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 60px;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a,
+        .dropbutton {
+            display: inline-block;
+            padding: 20px;
+            background-color: black;
+            width: 100px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        li a:hover,
+        .hasdrop:hover .dropbutton {
+            background-color: rgb(36, 93, 42);
+        }
+        
+        li.hasdrop {
+            display: inline-block;
+        }
+        
+        .dropmenu {
+            display: none;
+            position: absolute;
+            background-color: black;
+            color: white;
+            width: 140px;
+        }
+        
+        .dropmenu a {
+            color: white;
+            background-color: black;
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropmenu a:hover {
+            background-color: rgb(58, 104, 28);
+            width: 115px;
+        }
+        
+        .hasdrop:hover .dropmenu {
+            display: block;
+        }
+        
+        .container {
+            display: block;
+            position: relative;
+            z-index: -1;
+        }
+        
+        img {
+            width: 300px;
+            float: right;
+            margin-top: 120px;
+            margin-right: 150px;
+        }
+        
+        .wel {
+            padding-top: 120px;
+            color: rgb(20, 92, 37);
+            font-size: 25px;
+            width: 550px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navdiv">
+        <nav>
+            <ul>
+                <li class="hasdrop"><a href="{{ url_for('welcome') }}" class="dropbutton">Home</a>
+                    <div class='dropmenu'>
+                        <a href="{{ url_for('bin') }}">Sist Bin</a>
+
+                    </div>
+                </li>
+                <li class="hasdrop"><a href="{{ url_for('ap') }}" class="dropbutton">App</a>
+                    <div class='dropmenu'>
+                        <a href="{{ url_for('ap') }}">Download</a>
+                        <a href="{{ url_for('ap') }}">View</a>
+
+                        <a href="{{ url_for('moap') }}">Mobile App</a>
+
+                    </div>
+                </li>
+                <li class="hasdrop">
+                    <a href="{{ url_for('form') }}" class="dropbutton">Form</a>
+                </li>
+                <li class="hasdrop"><a href="#" class="dropbutton">About</a>
+                    <div class='dropmenu'>
+                        <a href="{{ url_for('srijith') }}">Srijith</a>
+                        <a href="{{ url_for('tisha') }}">Tisha</a>
+                        <a href="#">Sangeetha</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <img src="/static/ECOSIST.png">
+    <p class="wel"> Welcome to Ecosist, we are a group of college students who seek to create an eco-friendly environment We are a group of passionate students from SIST, Chennai working towards making our college campus more eco-friendly by appropriating good UX/UI
+        methods. We’re not experts by any means, but we’re all passionate and we shall continue to learn. If you find there’s scope for any betterment, please contact us and we can have a chat!</p>
+    <footer>
+        <p>Copyright &copy; 2022 Ecosist</p>
+    </footer>
+</body>
+
+</html>
